@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           rel="icon"
-          href="https://upload.wikimedia.org/wikipedia/commons/8/82/Eo_circle_teal_letter-c.svg"
+          href="/assets/icons/CRT_Icon.png"
         />
       </Head>
       <Component {...pageProps} />

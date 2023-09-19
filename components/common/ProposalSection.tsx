@@ -126,15 +126,6 @@ const ProposalSection: React.FC<ProposalSectionProps> = ({ activeSlide }) => {
                         </div>
                       </div>
                     </div>
-                    {/* <HoverEffectBtn
-                      className="svg-wrapper hover:font-normal text-[#2F4644] font-light text-2xl !w-[140px] leading-[120%]"
-                      strokeDashoffset={-180}
-                      strokeDasharray="135 300"
-                      role="Proposal"
-                      width={140}
-                      height={40}
-                      label={"Learn more"}
-                    /> */}
                     <button
                       type="button"
                       className={cx(
@@ -144,10 +135,6 @@ const ProposalSection: React.FC<ProposalSectionProps> = ({ activeSlide }) => {
                       Learn more
                     </button>
                   </div>
-                  {/* <LoginBtn
-                    label={item.btnLabel}
-                    className="!flex svg-wrapper opacity-[.8] hover:opacity-[1] !w-[140px] blue !rounded-3xl"
-                  /> */}
                 </div>
               </div>
             );

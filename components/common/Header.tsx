@@ -93,15 +93,6 @@ const Header: React.FC<HeaderProps> = ({
               </div>
               {!isTablet && (
                 <div className="hidden md:flex items-center gap-8">
-                  {/* <HoverEffectBtn
-                    className="svg-wrapper opacity-[.9] hover:opacity-[1] mx-1"
-                    strokeDashoffset={-153}
-                    strokeDasharray="71 300"
-                    width={100}
-                    height={40}
-                    textClass="font-normal not-italic text-base hover:font-semibold"
-                    label="Portfolio"
-                  /> */}
                   <button
                     type="button"
                     className={cx(
@@ -111,15 +102,6 @@ const Header: React.FC<HeaderProps> = ({
                   >
                     Portfolio
                   </button>
-                  {/* <HoverEffectBtn
-                    className="svg-wrapper opacity-[.9] hover:opacity-[1] mx-1"
-                    strokeDashoffset={-169}
-                    strokeDasharray="43 300"
-                    width={100}
-                    height={40}
-                    textClass="font-normal not-italic text-base hover:font-semibold"
-                    label="Raise"
-                  /> */}
                   <button
                     type="button"
                     className={cx(
@@ -129,15 +111,6 @@ const Header: React.FC<HeaderProps> = ({
                   >
                     Raise
                   </button>
-                  {/* <HoverEffectBtn
-                    className="svg-wrapper opacity-[.9] hover:opacity-[1] mx-1"
-                    strokeDashoffset={-162}
-                    strokeDasharray="56 300"
-                    width={100}
-                    height={40}
-                    textClass="font-normal not-italic text-base hover:font-semibold"
-                    label="Market"
-                  /> */}
                   <button
                     type="button"
                     className={cx(

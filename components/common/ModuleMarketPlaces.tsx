@@ -5,10 +5,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { EffectCoverflow, Navigation, Pagination } from "swiper/modules";
-import HoverEffectBtn from "components/common/loginBtn/HoverEffectBtn";
 import { useEffect, useState } from "react";
-// import NextBtn from "public/assets/icons/NextBtn";
-// import PrevBtn from "public/assets/icons/PrevBtn";
 import { cx } from "@emotion/css";
 import { useMediaSize } from "components/hooks/media-size";
 
@@ -280,7 +277,7 @@ const ModuleMarketPlaces: React.FC<ModuleMarketPlacesProps> = ({
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [isTablet,isMobile]);
+  }, [isTablet, isMobile]);
 
   return (
     <div
@@ -317,7 +314,11 @@ const ModuleMarketPlaces: React.FC<ModuleMarketPlacesProps> = ({
       <div className="overflow-hidden">
         {!isMobile ? (
           <Swiper
-            style={{ transform: `translate3d( ${isTablet && swiperPosition}px, 0px, 0px)` }}
+            style={{
+              transform: `translate3d( ${
+                isTablet && swiperPosition
+              }px, 0px, 0px)`,
+            }}
             {...swiperProps}
           >
             {slides.map((item, index) => {
