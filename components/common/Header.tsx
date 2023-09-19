@@ -78,7 +78,7 @@ const Header: React.FC<HeaderProps> = ({
                 {activeSlide || mousePosition ? (
                   <Image
                     width={163}
-                    height={49.2}
+                    height={49}
                     alt="LogoBlack"
                     src="/assets/icons/LogoBlack.png"
                   />

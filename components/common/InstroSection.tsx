@@ -47,7 +47,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
                   isTablet && "!mt-0 hidden"
                 )}
                 width={isTablet ? 400 : 650}
-                height={279.92}
+                height={280}
                 src="/assets/icons/LogoWhiteBlur.png"
                 alt="IntroImage"
               />
@@ -108,7 +108,6 @@ const IntroSection: React.FC<IntroSectionProps> = ({
         </div>
       </div>
       <Image
-        alt="Wireframe"
         className={cx(
           "w-auto z-[0] absolute bottom-0 right-0 !opacity-80 wireframe",
           !isTablet && "h-[100%]"
@@ -116,6 +115,8 @@ const IntroSection: React.FC<IntroSectionProps> = ({
         width={1700}
         height={1650}
         src="/assets/icons/Artboard.png"
+        alt="Wireframe"
+        priority={true}
       />
     </>
   );
