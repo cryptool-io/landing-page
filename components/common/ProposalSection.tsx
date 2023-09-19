@@ -91,7 +91,7 @@ const ProposalSection: React.FC<ProposalSectionProps> = ({ activeSlide }) => {
         >
           {plans.map((item, index) => {
             return (
-              <div key={index} className={isTablet ? "w-full" : ""}>
+              <div key={index} className={cx("h-full", isTablet ? "w-full" : "")}>
                 <div className="flex flex-col h-full">
                   <div className="flex flex-col col-auto sm:w-[396px] py-7 px-2 sm:px-[22px] items-start border border-solid rounded-xl bg-[#dcdcdc33]">
                     <div className="text-[#2F4644] text-base md:text-lg lg:text-xl xl:text-[22px] font-medium not-italic leading-[100%] mb-6">
