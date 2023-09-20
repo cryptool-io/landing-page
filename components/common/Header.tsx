@@ -266,7 +266,10 @@ const Header: React.FC<HeaderProps> = ({
               </>
             )}
           </div>
-          <div className="pr-[30px]">
+          <div
+            className="pr-[30px]"
+            onClick={() => setIsSubscription(!isSubscription)}
+          >
             <LoginBtn
               className="w-full mt-[10px] red"
               label="Subscribe"

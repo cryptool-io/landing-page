@@ -345,7 +345,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           onClick={
             () => {
               {
-                if (!isSubmited && email && userType && netSize) {
+                if (!isSubmited && isValidEmail(email) && userType && netSize) {
                   notify();
                   setIsSubmited(true);
                   // getDocs();
