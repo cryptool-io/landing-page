@@ -35,9 +35,10 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
       </div>
     );
   const isValidEmail = (e: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
     return emailRegex.test(e);
   };
+
   // const getDocs = async () => {
   //   const url = "/api/addData"; // Modify this if your API route has a different path
 
