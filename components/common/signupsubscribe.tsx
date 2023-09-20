@@ -85,7 +85,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           placeholder="Enter your email address"
           required
         />
-        {isValidEmail(email) === false && (
+        {(isValidEmail(email) === false) && (email !== "") && (
           <div className="text-[#E24747] pl-3 mt-2 font-normal text-xs leading-[180%">
             Email is not valid
           </div>
