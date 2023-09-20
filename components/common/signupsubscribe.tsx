@@ -27,6 +27,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
   const [isUpdate, setIsUpdate] = useState<boolean>(false);
   const [netSize, setNetSize] = useState<string>("");
   const [isSubmited, setIsSubmited] = useState<boolean>(false);
+  const [failSubmited, setFailSubmited] = useState<boolean>(false);
   const notify = () =>
     toast(
       <div className="flex justify-between items-center">
@@ -85,7 +86,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           placeholder="Enter your email address"
           required
         />
-        {(isValidEmail(email) === false) && (email !== "") && (
+        {isValidEmail(email) === false && email !== "" && failSubmited && (
           <div className="text-[#E24747] pl-3 mt-2 font-normal text-xs leading-[180%">
             Email is not valid
           </div>
@@ -350,6 +351,8 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
                   notify();
                   setIsSubmited(true);
                   // getDocs();
+                } else {
+                  setFailSubmited(true);
                 }
               }
             }
