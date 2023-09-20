@@ -16,6 +16,7 @@
     "@types/react-burger-menu": "^2.8.3",
     "@types/react-dom": "18.0.9",
     "@types/react-lottie": "^1.2.6",
+    "axios": "^1.5.0",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "lottie-to-svg": "^1.1.0",

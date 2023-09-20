@@ -8,6 +8,7 @@ import Linkedin from "public/assets/icons/Linkedin";
 import Telegram from "public/assets/icons/Telegram";
 import Twitter from "public/assets/icons/Twitter";
 import UnClick from "public/assets/icons/UnClick";
+import axios from "axios";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,9 +23,10 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
 }) => {
   const [email, setEmail] = useState<string>("");
   const { goToManualSignUp } = useCustomRouter();
-  const [userType, setUserType] = useState<string>("");
+  const [userType, setUserType] = useState<string[]>([]);
   const [isUpdate, setIsUpdate] = useState<boolean>(false);
   const [netSize, setNetSize] = useState<string>("");
+  const [isSubmited, setIsSubmited] = useState<boolean>(false);
   const notify = () =>
     toast(
       <div className="flex justify-between items-center">
@@ -32,6 +34,26 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
         <Check width={24} height={24} />
       </div>
     );
+  const isValidEmail = (e: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(e);
+  };
+  // const getDocs = async () => {
+  //   const url = "/api/addData"; // Modify this if your API route has a different path
+
+  //   const data = {
+  //     name: "John Doe",
+  //     birth: "01/01/1990",
+  //     email: "johndoe@example.com",
+  //   };
+
+  //   try {
+  //     const response = await axios.post(url, data);
+  //     console.log(response.data.message); // Data added successfully
+  //   } catch (error) {
+  //     console.error(`Error adding data: ${error}`);
+  //   }
+  // };
   useEffect(() => {
     if (router.asPath !== "/") {
       const next = document.querySelector("#__next");
@@ -39,7 +61,6 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
     }
   });
   return (
-    // <div className="flex justify-center items-center bg-slate-300 w-full py-8 subscription">
     <div className="w-full 2xs:w-[427px] relative flex justify-start p-8 flex-col gap-8 rounded-xl bg-white subscription_body">
       <div className="w-full">
         <div className="text-[#2F4644] text-center text-[22px] font-medium not-italic leading-[22px]">
@@ -63,7 +84,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           placeholder="Enter your email address"
           required
         />
-        {!email.includes("@") && email !== "" && (
+        {isValidEmail(email) === false && (
           <div className="text-[#E24747] pl-3 mt-2 font-normal text-xs leading-[180%">
             Email is not valid
           </div>
@@ -74,8 +95,17 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           What type of User are you?
         </div>
         <div className="flex items-center justify-start gap-[15px] w-full mt-[13px]">
-          {userType === "Individual Investor" ? (
-            <div onClick={() => setUserType("")}>
+          {userType.includes("Individual Investor") ? (
+            <div
+              onClick={() => {
+                const index = userType.indexOf("Individual Investor");
+                if (index !== -1) {
+                  const updatedUserType = [...userType];
+                  updatedUserType.splice(index, 1);
+                  setUserType(updatedUserType);
+                }
+              }}
+            >
               <Click
                 width={20}
                 height={20}
@@ -83,7 +113,11 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
               />
             </div>
           ) : (
-            <div onClick={() => setUserType("Individual Investor")}>
+            <div
+              onClick={() => {
+                setUserType([...userType, "Individual Investor"]);
+              }}
+            >
               <UnClick width={20} height={20} className="cursor-pointer" />
             </div>
           )}
@@ -92,8 +126,17 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           </div>
         </div>
         <div className="flex items-center justify-start gap-[15px] w-full mt-[13px]">
-          {userType === "Venture Capital" ? (
-            <div onClick={() => setUserType("")}>
+          {userType.includes("Venture Capital") ? (
+            <div
+              onClick={() => {
+                const index = userType.indexOf("Venture Capital");
+                if (index !== -1) {
+                  const updatedUserType = [...userType];
+                  updatedUserType.splice(index, 1);
+                  setUserType(updatedUserType);
+                }
+              }}
+            >
               <Click
                 width={20}
                 height={20}
@@ -101,7 +144,11 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
               />
             </div>
           ) : (
-            <div onClick={() => setUserType("Venture Capital")}>
+            <div
+              onClick={() => {
+                setUserType([...userType, "Venture Capital"]);
+              }}
+            >
               <UnClick width={20} height={20} className="cursor-pointer" />
             </div>
           )}
@@ -110,8 +157,17 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
           </div>
         </div>
         <div className="flex items-center justify-start gap-[15px] w-full mt-[13px]">
-          {userType === "Project" ? (
-            <div onClick={() => setUserType("")}>
+          {userType.includes("Project") ? (
+            <div
+              onClick={() => {
+                const index = userType.indexOf("Project");
+                if (index !== -1) {
+                  const updatedUserType = [...userType];
+                  updatedUserType.splice(index, 1);
+                  setUserType(updatedUserType);
+                }
+              }}
+            >
               <Click
                 width={20}
                 height={20}
@@ -119,7 +175,11 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
               />
             </div>
           ) : (
-            <div onClick={() => setUserType("Project")}>
+            <div
+              onClick={() => {
+                setUserType([...userType, "Project"]);
+              }}
+            >
               <UnClick width={20} height={20} className="cursor-pointer" />
             </div>
           )}
@@ -283,7 +343,15 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
         <div
           className="w-full px-6 py-2 rounded-[29px] bg-[#2F4644] text-white flex justify-center mt-4 cursor-pointer"
           onClick={
-            () => notify()
+            () => {
+              {
+                if (!isSubmited && email && userType && netSize) {
+                  notify();
+                  setIsSubmited(true);
+                  // getDocs();
+                }
+              }
+            }
             // goToManualSignUp()
           }
         >
@@ -305,7 +373,6 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
         <Close className="cursor-pointer" width={32} height={32} />
       </div>
     </div>
-    // </div>
   );
 };
 
