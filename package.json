@@ -19,6 +19,8 @@
     "axios": "^1.5.0",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
+    "google-auth-library": "^9.0.0",
+    "google-spreadsheet": "^4.1.0",
     "lottie-to-svg": "^1.1.0",
     "next": "13.0.6",
     "react": "18.2.0",
