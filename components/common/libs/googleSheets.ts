@@ -4,7 +4,8 @@ import { JWT } from "google-auth-library";
 export const addTest = async (
   email: string,
   typeUser: string[],
-  sizeNet: string
+  sizeNet: string,
+  isUpdate:boolean
 ) => {
   const serviceAccountAuth = new JWT({
     email: 'cryptool-landingpage@cryptool-399615.iam.gserviceaccount.com',
@@ -24,6 +25,7 @@ export const addTest = async (
       : "No",
     Venture_Capital: typeUser.includes("Venture Capital") ? "Yes" : "No",
     Project: typeUser.includes("Project") ? "Yes" : "No",
-    Size_of_Network: sizeNet
+    Size_of_Network: sizeNet,
+    Receve_Update: isUpdate ? 'Yes' : 'No'
   });
 };
