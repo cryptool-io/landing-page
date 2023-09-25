@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import { useMediaSize } from "components/hooks/media-size";
 import { useRouter } from "next/router";
 import LeftNavBar from "components/common/basic/LeftNavBar";
+import { cx } from "@emotion/css";
 
 type SwiperRef = {
   // add the required 'swiper' property of the specific type
@@ -136,7 +137,11 @@ const Home: NextPage = () => {
           {/* <RequestDemo /> */}
         </div>
       ) : (
-        <Swiper ref={swiperRef} {...swiperProps}>
+        <Swiper
+          ref={swiperRef}
+          {...swiperProps}
+          className={cx("mySwiper", isSubscription && "blur-[5px]")}
+        >
           <SwiperSlide>
             <IntroSection
               activeSlide={activeSlide}

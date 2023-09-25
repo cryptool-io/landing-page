@@ -12,7 +12,8 @@ import axios from "axios";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { addTest } from "./libs/googleSheets";
+import { AddTest } from "./libs/googleSheets";
+import UnCheck from "public/assets/icons/UnCheck";
 
 interface SignUpSubscribePageProps {
   isSubscription: true;
@@ -23,6 +24,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
   setIsSubscription,
   isSubscription,
 }) => {
+  const [isEmail, setIsEmail] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const { goToManualSignUp } = useCustomRouter();
   const [userType, setUserType] = useState<string[]>([]);
@@ -34,6 +36,13 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
       <div className="flex justify-between items-center">
         Response successfully submitted
         <Check width={24} height={24} />
+      </div>
+    );
+  const notify1 = () =>
+    toast(
+      <div className="flex justify-between items-center">
+        Already is registered
+        <UnCheck width={24} height={24} />
       </div>
     );
   const isValidEmail = (e: string) => {
@@ -345,19 +354,19 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
       <div className="w-full">
         <div
           className="w-full px-6 py-2 rounded-[29px] bg-[#2F4644] text-white flex justify-center mt-4 cursor-pointer"
-          onClick={
-            () => {
-              {
-                if (!isSubmited && isValidEmail(email) && userType && netSize) {
-                  notify();
+          onClick={() => {
+            {
+              if (!isSubmited && isValidEmail(email) && userType && netSize) {
+                AddTest(email, userType, netSize, isUpdate);
+                if (localStorage.getItem("isLogin") === "true") {
                   setIsSubmited(true);
-                  addTest(email, userType, netSize, isUpdate);
-                  // getDocs();
+                  notify();
+                } else {
+                  notify1();
                 }
               }
             }
-            // goToManualSignUp()
-          }
+          }}
         >
           Submit
         </div>

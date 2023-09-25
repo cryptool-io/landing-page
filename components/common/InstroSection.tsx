@@ -24,8 +24,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
         className={cx(
           "w-full bg-firstSection flex justify-center",
           !isTablet && "h-full",
-          isTablet && "h-[100vh]",
-          isSubscription && "blur-[5px]"
+          isTablet && "h-[100vh]"
         )}
       >
         <div className="max-w-[1560px] w-full flex flex-col justify-between z-[1111]">
