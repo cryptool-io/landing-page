@@ -12,9 +12,8 @@ import axios from "axios";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
-
 import { addTest } from "./libs/googleSheets";
+
 interface SignUpSubscribePageProps {
   isSubscription: true;
   setIsSubscription: Dispatch<SetStateAction<boolean>>;
@@ -59,14 +58,13 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
   //   }
   // };
   useEffect(() => {
-    
     if (router.asPath !== "/") {
       const next = document.querySelector("#__next");
       next?.classList.remove("h-[100vh]");
     }
   });
   return (
-    <div className="w-full 2xs:w-[427px] relative flex justify-start p-8 flex-col gap-8 rounded-xl bg-white subscription_body">
+    <div className="w-full 2xs:w-[427px] relative flex justify-start p-8 flex-col gap-8 rounded-tl-xl  rounded-bl-xl bg-white subscription_body">
       <div className="w-full">
         <div className="text-[#2F4644] text-center text-[22px] font-medium not-italic leading-[22px]">
           Subscribe
@@ -353,7 +351,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
                 if (!isSubmited && isValidEmail(email) && userType && netSize) {
                   notify();
                   setIsSubmited(true);
-                  addTest(email, userType, netSize, isUpdate)
+                  addTest(email, userType, netSize, isUpdate);
                   // getDocs();
                 }
               }
