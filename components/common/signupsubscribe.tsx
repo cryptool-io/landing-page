@@ -41,7 +41,7 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
   const notify1 = () =>
     toast(
       <div className="flex justify-between items-center">
-        Already is registered
+        Email is already subscribed
         <UnCheck width={24} height={24} />
       </div>
     );
@@ -358,11 +358,14 @@ const SignUpSubscribePage: React.FC<SignUpSubscribePageProps> = ({
             {
               if (!isSubmited && isValidEmail(email) && userType && netSize) {
                 AddTest(email, userType, netSize, isUpdate);
+                console.log(localStorage.getItem("isLogin"));
                 if (localStorage.getItem("isLogin") === "true") {
                   setIsSubmited(true);
                   notify();
-                } else {
+                }
+                if (localStorage.getItem("isLogin") === "false") {
                   notify1();
+                  setIsSubmited(true);
                 }
               }
             }

@@ -47,7 +47,7 @@ export const AddTest = async (
         Receve_Update: isUpdate ? "Yes" : "No",
       });
     } else {
-      localStorage.setItem("isLogin", "flase");
+      localStorage.setItem("isLogin", "false");
     }
   }
 };
