@@ -1,6 +1,7 @@
 import { useMedia } from "react-use";
 
 export const useMediaSize = () => {
+  const isMiniMobile = useMedia("(max-width: 633px)", false);
   const isMobile = useMedia("(max-width: 833px)", false);
   const isTablet = useMedia(
     // "(min-width: 834px) and (max-width: 1439px)",
@@ -9,5 +10,5 @@ export const useMediaSize = () => {
   );
   const isDesktop = useMedia("(min-width: 1440px)", false);
 
-  return { isMobile, isTablet, isDesktop };
+  return { isMobile, isTablet, isDesktop, isMiniMobile };
 };

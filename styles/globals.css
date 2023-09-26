@@ -164,8 +164,8 @@ body {
 }
 
 #__next {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
 }
 .swiper-pagination-bullet {
   width: 20px !important;
