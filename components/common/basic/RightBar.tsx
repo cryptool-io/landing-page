@@ -3,7 +3,7 @@ import { useMediaSize } from "components/hooks/media-size";
 import ArrowBelow from "public/assets/icons/ArrowBelow";
 import ArrowTop from "public/assets/icons/ArrowTop";
 import ArrowDown from "public/assets/icons/ArrowDown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface RightNavBar {}
 
@@ -63,7 +63,16 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                 "py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                 isClickStarted && "!text-[#71A8FF]"
               )}
-              onClick={() => setIsClickStarted(!isClickStarted)}
+              onClick={() =>
+                isClickModules
+                  ? (setIsClickStarted(true),
+                    setIsClickPortfolio(false),
+                    setIsClickRaise(false),
+                    setIsClickMarket(false),
+                    setIsClickBroker(false),
+                    setIsClickModules(false))
+                  : setIsClickStarted(!isClickStarted)
+              }
             >
               Getting Started
               {isClickStarted ? (
@@ -130,7 +139,13 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                 "py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex justify-between cursor-pointer",
                 isClickModules && "!text-[#71A8FF]"
               )}
-              onClick={() => setIsClickModules(!isClickModules)}
+              onClick={() =>
+                isClickStarted
+                  ? (setIsClickStarted(false),
+                    setIsClickAccount(false),
+                    setIsClickModules(true))
+                  : setIsClickStarted(!isClickStarted)
+              }
             >
               Portfolio Modules
               {isClickModules ? (
@@ -150,7 +165,14 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                     "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickPortfolio && "!text-[#71A8FF]"
                   )}
-                  onClick={() => setIsClickPortfolio(!isClickPortfolio)}
+                  onClick={() =>
+                    isClickRaise === true || isClickMarket === true
+                      ? (setIsClickMarket(false),
+                        setIsClickPortfolio(true),
+                        setIsClickRaise(false),
+                        setIsClickBroker(false))
+                      : setIsClickPortfolio(!isClickPortfolio)
+                  }
                 >
                   Portfolio
                   {isClickPortfolio ? (
@@ -185,7 +207,14 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                     "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickRaise && "!text-[#71A8FF]"
                   )}
-                  onClick={() => setIsClickRaise(!isClickRaise)}
+                  onClick={() =>
+                    isClickPortfolio === true || isClickMarket === true
+                      ? (setIsClickMarket(false),
+                        setIsClickPortfolio(false),
+                        setIsClickRaise(true),
+                        setIsClickBroker(false))
+                      : setIsClickRaise(!isClickRaise)
+                  }
                 >
                   Raise
                   {isClickRaise ? (
@@ -223,7 +252,13 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                     "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickMarket && "!text-[#71A8FF]"
                   )}
-                  onClick={() => setIsClickMarket(!isClickMarket)}
+                  onClick={() =>
+                    isClickPortfolio === true || isClickRaise === true
+                      ? (setIsClickMarket(true),
+                        setIsClickPortfolio(false),
+                        setIsClickRaise(false))
+                      : setIsClickMarket(!isClickMarket)
+                  }
                 >
                   Market
                   {isClickMarket ? (
@@ -240,29 +275,41 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                     />
                   )}
                 </div>
-              {isClickMarket && (
-                <div>
-                  <div className="py-[5px] pr-[9px] ml-2 pl-2 border-solid border-[#374151] border-l-[1px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
-                    Allocation OTC
+                {isClickMarket && (
+                  <div className="border-solid ml-2 border-[#374151] border-l-[1px]">
+                    <div className="py-[5px] pr-[9px] pl-2  text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                      Allocation OTC
+                    </div>
+                    <div
+                      className="py-[5px] pr-[9px] pl-2  text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between"
+                      onClick={() => setIsClickBroker(!isClickBroker)}
+                    >
+                      Broker Sales
+                      {isClickBroker ? (
+                        <ArrowTop
+                          className="w-[18px]"
+                          width={"18px"}
+                          height={"18px"}
+                        />
+                      ) : (
+                        <ArrowDown
+                          className="w-[18px]"
+                          width={"18px"}
+                          height={"18px"}
+                        />
+                      )}
+                    </div>
+                    {isClickBroker && (
+                      <div
+                        className={cx(
+                          "py-[5px] pr-[9px] pl-2 ml-2 border-solid border-[#374151] border-l-[1px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between"
+                        )}
+                      >
+                        SAFT / SAFE
+                      </div>
+                    )}
                   </div>
-                  <div className="py-[5px] pr-[9px] ml-2 pl-2 border-solid border-[#374151] border-l-[1px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between" onClick={() => setIsClickBroker(!isClickBroker)}>
-                    Broker Sales
-                  {isClickBroker ? (
-                    <ArrowTop
-                      className="w-[18px]"
-                      width={"18px"}
-                      height={"18px"}
-                    />
-                  ) : (
-                    <ArrowDown
-                      className="w-[18px]"
-                      width={"18px"}
-                      height={"18px"}
-                    />
-                  )}
-                  </div>
-                </div>
-              )}
+                )}
               </div>
             )}
             <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">

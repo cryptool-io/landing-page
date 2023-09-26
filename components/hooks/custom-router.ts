@@ -41,6 +41,9 @@ export const useCustomRouter = () => {
   const goToSentEmail = () => {
     return router.push(ROUTE_PATH.SentEmail);
   };
+  const goToDocument = () => {
+    return router.push(ROUTE_PATH.Document)
+  }
 
   return {
     goToHome,
@@ -51,5 +54,6 @@ export const useCustomRouter = () => {
     goToChangePassword,
     goToNewEmail,
     goToSentEmail,
+    goToDocument,
   };
 };
