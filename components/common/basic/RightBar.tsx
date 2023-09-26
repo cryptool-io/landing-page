@@ -51,16 +51,16 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
           />
         </div>
         <div className="flex flex-col pt-[33px]">
-          <div className="text-[#A2A9B9] py-[5px] px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase">
+          <div className="text-[#A2A9B9] py-[5px] hover:bg-[#85a8e01a] cursor-pointer rounded-md px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase">
             ABOUT US
           </div>
           <div className="flex flex-col">
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               One Pager
             </div>
             <div
               className={cx(
-                "py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
+                "py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                 isClickStarted && "!text-[#71A8FF]"
               )}
               onClick={() =>
@@ -89,7 +89,7 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
               <div className="flex flex-col ml-[17px] duration-1000 border-solid border-[#374151] border-l-[1px]">
                 <div
                   className={cx(
-                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
+                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickAccount && "!text-[#71A8FF]"
                   )}
                   onClick={() => setIsClickAccount(!isClickAccount)}
@@ -114,29 +114,29 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                     Ambassador Referral
                   </div>
                 )}
-                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
                   Creating Portfolio
                 </div>
-                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
                   Creating Group
                 </div>
-                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
                   Creating Pool
                 </div>
-                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
                   Creating Listing
                 </div>
-                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
                   Broker Registration
                 </div>
-                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
+                <div className="py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between">
                   Staking
                 </div>
               </div>
             )}
             <div
               className={cx(
-                "py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px] flex justify-between cursor-pointer",
+                "py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px] flex justify-between",
                 isClickModules && "!text-[#71A8FF]"
               )}
               onClick={() =>
@@ -162,7 +162,7 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
               <div className="flex flex-col ml-[17px] duration-1000 border-solid border-[#374151] border-l-[1px]">
                 <div
                   className={cx(
-                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
+                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickPortfolio && "!text-[#71A8FF]"
                   )}
                   onClick={() =>
@@ -204,7 +204,7 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                 )}
                 <div
                   className={cx(
-                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
+                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickRaise && "!text-[#71A8FF]"
                   )}
                   onClick={() =>
@@ -249,7 +249,7 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                 )}
                 <div
                   className={cx(
-                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
+                    "py-[5px] pr-[9px] pl-2 text-[#CCCFD4] hover:bg-[#85a8e01a] rounded-md text-sm font-normal leading-[22px] flex cursor-pointer justify-between",
                     isClickMarket && "!text-[#71A8FF]"
                   )}
                   onClick={() =>
@@ -312,82 +312,82 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
                 )}
               </div>
             )}
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Platform Services
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Platform Account & Fees
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Roadmap
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Token Utility
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Partnerships
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Investors
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Team
             </div>
-            <div className="text-[#A2A9B9] py-[5px] px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
+            <div className="text-[#A2A9B9] py-[5px] hover:bg-[#85a8e01a] cursor-pointer rounded-md px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
               Documentation
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Tokenomics
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               PitchDeck
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Whitepaper
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Economic (Business) Strategy
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Ambassador Program
             </div>
-            <div className="text-[#A2A9B9] py-[5px] px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
+            <div className="text-[#A2A9B9] py-[5px] hover:bg-[#85a8e01a] cursor-pointer rounded-md px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
               Company
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Terms of Use
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Legal & Privacy
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Disclaimer
             </div>
-            <div className="text-[#A2A9B9] py-[5px] px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
+            <div className="text-[#A2A9B9] py-[5px] hover:bg-[#85a8e01a] cursor-pointer rounded-md px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
               Company
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Technical
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Security & Audits
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Contracts
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               API
             </div>
-            <div className="text-[#A2A9B9] py-[5px] px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
+            <div className="text-[#A2A9B9] py-[5px] hover:bg-[#85a8e01a] cursor-pointer rounded-md px-[9px] font-robotic text-xs font-semibold leading-[18px] tracking-[1.2px] uppercase mt-[37px]">
               Support
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               Troubleshooting
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px]">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px]">
               FAQ
             </div>
-            <div className="py-[5px] px-[9px] text-[#CCCFD4] text-sm font-normal leading-[22px] mb-5">
+            <div className="py-[5px] px-[9px] text-[#CCCFD4] hover:bg-[#85a8e01a] cursor-pointer rounded-md text-sm font-normal leading-[22px] mb-5">
               Contact
             </div>
           </div>
