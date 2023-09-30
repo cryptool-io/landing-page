@@ -455,44 +455,45 @@ const RightNavBar: React.FC<RightNavBar> = ({}) => {
             </div>
           </div>
         </div>
-        <div className="sticky bottom-0 pb-[10px] bg-[#0F2421]">
-              <div className="flex flex-row space-x-3 justify-center">
-                <Link
-                  target="blank"
-                  href={"mailto:info@cryptool.io"}
-                  className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
-                >
-                  <Mail width={14} height={16} />
-                </Link>
-                <Link
-                  target="blank"
-                  href={"https://twitter.com/cryptool_io"}
-                  className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
-                >
-                  <Twitter width={14} height={16} />
-                </Link>
-                <Link
-                  target="blank"
-                  href={"https://linkedin.com/company/cryptool-io"}
-                  className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
-                >
-                  <Linkedin width={14} height={16} />
-                </Link>
-                <Link
-                  target="blank"
-                  href={"https://t.me/cryptool_io"}
-                  className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
-                >
-                  <Telegram width={14} height={16} />
-                </Link>
-                <Link
-                  target="blank"
-                  href={"https://calendly.com/cryptool_io/"}
-                  className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
-                >
-                  <Calendar width={14} height={16} />
-                </Link>
-              </div>
+        <div className="sticky bottom-0 pb-[10px] bg-[#0F2421] w-[260px]">
+          <div className="flex justify-start ml-[30px] text-[#CCCFD4] font-robotic text-sm leadign-[22px] pt-4 border-solid border-[#ffffff4d] border-t-[1px]">Contact Us</div>
+          <div className="flex flex-row space-x-3 justify-start ml-[30px] p-[9px] pl-[17px] rounded-md bg-[#2D323A]">
+            <Link
+              target="blank"
+              href={"mailto:info@cryptool.io"}
+              className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
+            >
+              <Mail width={14} height={16} />
+            </Link>
+            <Link
+              target="blank"
+              href={"https://twitter.com/cryptool_io"}
+              className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
+            >
+              <Twitter width={14} height={16} />
+            </Link>
+            <Link
+              target="blank"
+              href={"https://linkedin.com/company/cryptool-io"}
+              className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
+            >
+              <Linkedin width={14} height={16} />
+            </Link>
+            <Link
+              target="blank"
+              href={"https://t.me/cryptool_io"}
+              className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
+            >
+              <Telegram width={14} height={16} />
+            </Link>
+            <Link
+              target="blank"
+              href={"https://calendly.com/cryptool_io/"}
+              className="cursor-pointer p-2 rounded-full w-fit bg-[#E2EEED] flex items-center text-base"
+            >
+              <Calendar width={14} height={16} />
+            </Link>
+          </div>
         </div>
       </div>
     </>
